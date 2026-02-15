@@ -7,7 +7,6 @@ public class Letter_V : MonoBehaviour
     public BoxCollider2D mainCollider;
     public GameObject Player;
 
-    [Header("Raycast Settings")]
     public float rayLength = 10f;
     public LayerMask detectionLayer;
 
