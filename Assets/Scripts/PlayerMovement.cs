@@ -43,12 +43,12 @@ public class PlayerMovement : MonoBehaviour
             _rb.linearVelocity = new Vector2(horizontal * moveSpeed, _rb.linearVelocity.y);
         }
         // Jump
-        if (Input.GetKeyUp(KeyCode.Space) && !_jumped)
+        if ((Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.UpArrow)) && !_jumped)
         {
             _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, 0.2f * _rb.linearVelocity.y);
             _jumped = true;   
         }
-        else if (Input.GetKey(KeyCode.Space))
+        else if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
             if (_currentJumpVelocity < maxJumpVelocity)
             {
