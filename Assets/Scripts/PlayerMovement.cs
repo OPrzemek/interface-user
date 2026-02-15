@@ -5,16 +5,16 @@ public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D _rb;
     private BoxCollider2D _boxCollider2D;
+    
     [SerializeField]
     private LayerMask whatIsGround;
+    
     [SerializeField]
     private float moveSpeed = 5;
     private bool _isMoving;
     
     [SerializeField]
-    private float jumpVelocityIncrease = 2;
-    [SerializeField]
-    private float maxJumpVelocity = 15;
+    private float maxJumpVelocity = 20;
     private float _currentJumpVelocity;
 
     private bool _jumped;
@@ -43,17 +43,20 @@ public class PlayerMovement : MonoBehaviour
             _rb.linearVelocity = new Vector2(horizontal * moveSpeed, _rb.linearVelocity.y);
         }
         // Jump
-        if (Input.GetKey(KeyCode.Space) && !_jumped)
+        if (Input.GetKeyUp(KeyCode.Space) && !_jumped)
+        {
+            _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, 0.2f * _rb.linearVelocity.y);
+            _jumped = true;   
+        }
+        else if (Input.GetKey(KeyCode.Space))
         {
             if (_currentJumpVelocity < maxJumpVelocity)
             {
-                _rb.linearVelocity += new Vector2(0, jumpVelocityIncrease);
+                _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, maxJumpVelocity);
                 _currentJumpVelocity = _rb.linearVelocity.y;
             }
             
         }
-        if (Input.GetKeyUp(KeyCode.Space))
-            _jumped = true;
         if (IsGrounded())
         {
             _currentJumpVelocity = 0f;
