@@ -937,7 +937,7 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0
   m_GravityScale: 6
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 36249b6836447084aa6a2c5e0f71e562, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1034,6 +1034,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   moveSpeed: 5
+  jumpVelocityIncrement: 200
   maxJumpVelocity: 20
 --- !u!1 &1662914457
 GameObject:
