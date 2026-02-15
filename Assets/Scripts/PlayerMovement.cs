@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
     private LayerMask whatIsGround;
     [SerializeField]
     private float moveSpeed = 5;
+    private bool _isMoving;
+    
     [SerializeField]
     private float jumpVelocityIncrease = 2;
     [SerializeField]
@@ -22,13 +24,24 @@ public class PlayerMovement : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _boxCollider2D = GetComponent<BoxCollider2D>();
         _jumped = false;
+        _isMoving = false;
     }
 
     // Update is called once per frame
     void Update()
     {
         // Move
-        _rb.linearVelocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed, _rb.linearVelocity.y);
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        if (Mathf.Abs(horizontal) == 0f && _isMoving)
+        {
+            _rb.linearVelocity = new Vector2(0f, _rb.linearVelocity.y);
+            _isMoving = false;
+        }
+        else
+        {
+            _isMoving = true;
+            _rb.linearVelocity = new Vector2(horizontal * moveSpeed, _rb.linearVelocity.y);
+        }
         // Jump
         if (Input.GetKey(KeyCode.Space) && !_jumped)
         {
