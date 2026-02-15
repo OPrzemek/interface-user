@@ -7,31 +7,40 @@ public class Letter_V : MonoBehaviour
     public BoxCollider2D mainCollider;
     public GameObject Player;
 
+    [Header("Raycast Settings")]
+    public float rayLength = 10f;
+    public LayerMask detectionLayer;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        if (rb != null) rb.gravityScale = 0;
-        rb.linearVelocity = Vector2.zero;
-        rb.isKinematic = true;
+        if (rb != null)
+        {
+            rb.gravityScale = 0;
+            rb.linearVelocity = Vector2.zero;
+            rb.isKinematic = true;
+        }
         PlayerDown = false;
     }
 
     void Update()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down);
         if (rb == null) return;
-        Debug.DrawRay(transform.position, Vector2.down * rayLength, Color.red);
-        if (hit.collider != null && hit.collider.gameObject == Player)
+        if (!PlayerDown)
         {
-            PlayerDown = true;
-        }
+            
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, rayLength, detectionLayer);
+            Debug.DrawRay(transform.position, Vector2.down * rayLength, Color.red);
 
-        if (PlayerDown && rb != null)
+            if (hit.collider != null && hit.collider.gameObject == Player)
+            {
+                PlayerDown = true;
+            }
+        }
+        if (PlayerDown)
         {
             rb.gravityScale = 1;
             rb.isKinematic = false;
-            
-            
         }
     }
 
@@ -46,6 +55,5 @@ public class Letter_V : MonoBehaviour
             rb.isKinematic = true;
             PlayerDown = false;
         }
-        
     }
 }
