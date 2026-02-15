@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 1615837657767436422}
   m_Layer: 0
   m_Name: Letter_V
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -184,6 +184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerDown: 0
   mainCollider: {fileID: 7110070596995434321}
+  Player: {fileID: 0}
   rayLength: 10
   detectionLayer:
     serializedVersion: 2

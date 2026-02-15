@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
         InstantiateText("interface", new Vector2(-4.5f,2));
         InstantiateText("user", new Vector2(-2,0), 0.7f);
     }
+    
+    
 
     private void InstantiateText(string text, Vector2 position, float scale = 1)
     {
