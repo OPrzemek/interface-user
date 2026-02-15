@@ -5,6 +5,7 @@ public class Letter_V : MonoBehaviour
     private Rigidbody2D rb;
     public bool PlayerDown = false;
     public BoxCollider2D mainCollider;
+    public GameObject Player;
 
     void Start()
     {
@@ -17,12 +18,20 @@ public class Letter_V : MonoBehaviour
 
     void Update()
     {
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down);
         if (rb == null) return;
+        Debug.DrawRay(transform.position, Vector2.down * rayLength, Color.red);
+        if (hit.collider != null && hit.collider.gameObject == Player)
+        {
+            PlayerDown = true;
+        }
 
         if (PlayerDown && rb != null)
         {
             rb.gravityScale = 1;
             rb.isKinematic = false;
+            
+            
         }
     }
 
@@ -37,5 +46,6 @@ public class Letter_V : MonoBehaviour
             rb.isKinematic = true;
             PlayerDown = false;
         }
+        
     }
 }
