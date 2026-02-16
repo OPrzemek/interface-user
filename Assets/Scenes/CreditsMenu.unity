@@ -309,7 +309,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3060395776140551394, guid: d2fb98995ff870748b073f42288a0883, type: 3}
       propertyPath: m_Name
-      value: ButtonPlatform
+      value: BackButtonPlatform
       objectReference: {fileID: 0}
     - target: {fileID: 5928731078436698999, guid: d2fb98995ff870748b073f42288a0883, type: 3}
       propertyPath: m_LocalPosition.x

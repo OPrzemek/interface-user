@@ -11,12 +11,11 @@ enum ButtonType
 [RequireComponent(typeof(BoxCollider2D))]
 public class Button : MonoBehaviour
 {
-    private static string PLAYER_TAG = "Player";
     [SerializeField]
-    private ButtonType _buttonType;
+    private ButtonType buttonType;
     
     private void OnCollisionEnter2D(Collision2D other)
     {
-        SceneManager.LoadScene((int)_buttonType);
+        SceneManager.LoadScene((int)buttonType);
     }
 }

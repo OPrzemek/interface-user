@@ -346,6 +346,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CreditsButtonPlatform
       objectReference: {fileID: 0}
+    - target: {fileID: 4937818638018223909, guid: d2fb98995ff870748b073f42288a0883, type: 3}
+      propertyPath: buttonType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5928731078436698999, guid: d2fb98995ff870748b073f42288a0883, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6
@@ -397,29 +401,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3060395776140551394, guid: d2fb98995ff870748b073f42288a0883, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 599165273}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2fb98995ff870748b073f42288a0883, type: 3}
---- !u!1 &599165272 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3060395776140551394, guid: d2fb98995ff870748b073f42288a0883, type: 3}
-  m_PrefabInstance: {fileID: 599165271}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &599165273
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 599165272}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44807e4adb9fede46bc46068aea7bc9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _buttonType: 2
 --- !u!1001 &796854175
 PrefabInstance:
   m_ObjectHideFlags: 0
