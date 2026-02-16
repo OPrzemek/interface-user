@@ -149,6 +149,7 @@ GameObject:
   - component: {fileID: 7220161825893208893}
   - component: {fileID: 6859724435476605333}
   - component: {fileID: 4937818638018223909}
+  - component: {fileID: 8210779124444219448}
   m_Layer: 8
   m_Name: ButtonPlatform
   m_TagString: Platform
@@ -285,7 +286,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44807e4adb9fede46bc46068aea7bc9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buttonType: 0
+  sceneIndex: 0
+--- !u!114 &8210779124444219448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3060395776140551394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c0611143e3574440ac1f77421e62153, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7259622340814328095
 GameObject:
   m_ObjectHideFlags: 0

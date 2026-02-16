@@ -102,5 +102,7 @@ public class MovingCredit : MonoBehaviour
         }
 
         parent.transform.localScale = Vector3.one * scale;
+        parent.AddComponent<ScalablePlatform>();
+        parent.name = text;
     }
 }
