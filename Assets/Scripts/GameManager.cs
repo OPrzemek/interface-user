@@ -1,22 +1,26 @@
-using System;
 using System.Collections.Generic;
 using Config;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance;
+
+    private void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+        else
+        {
+            Destroy(gameObject);
+        }
+        DontDestroyOnLoad(gameObject);
+    }
+    
     [SerializeField]
     private LetterConfig letterConfig;
 
-    private void Start()
-    {
-        InstantiateText("interface", new Vector2(-4.5f,2), 1.2f);
-        InstantiateText("user", new Vector2(-2,0), 0.7f);
-    }
-    
-    
-
-    private void InstantiateText(string text, Vector2 position, float scale = 1)
+    public void InstantiateText(string text, Vector2 position, float scale = 1)
     {
         text = text.ToUpper();
         float positionX = position.x + 0.5f;
