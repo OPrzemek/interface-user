@@ -13,8 +13,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public float PlatformsScale = 1f;
-    private float _gravityIncrement = 0f;
-    private float _moveSpeedIncrement = 0f;
+    public float GravityScale = 6f;
+    public float MoveSpeed = 5f;
     
     
     private void Awake()

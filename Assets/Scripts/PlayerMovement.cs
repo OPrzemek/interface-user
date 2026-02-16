@@ -3,14 +3,13 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
 {
-    private Rigidbody2D _rb;
+    public Rigidbody2D rb;
     private BoxCollider2D _boxCollider2D;
     
     [SerializeField]
     private LayerMask whatIsGround;
-    
-    [SerializeField]
-    private float moveSpeed = 5;
+
+    public float moveSpeed;
     private bool _isMoving;
     
     [SerializeField]
@@ -21,10 +20,12 @@ public class PlayerMovement : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        _rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
         _boxCollider2D = GetComponent<BoxCollider2D>();
         _jumped = false;
         _isMoving = false;
+        moveSpeed = GameManager.Instance.MoveSpeed;
+        rb.gravityScale = GameManager.Instance.GravityScale;
     }
 
     // Update is called once per frame
@@ -34,26 +35,26 @@ public class PlayerMovement : MonoBehaviour
         float horizontal = Input.GetAxisRaw("Horizontal");
         if (Mathf.Abs(horizontal) == 0f && _isMoving)
         {
-            _rb.linearVelocity = new Vector2(0f, _rb.linearVelocity.y);
+            rb.linearVelocity = new Vector2(0f, rb.linearVelocity.y);
             _isMoving = false;
         }
         else
         {
             _isMoving = true;
-            _rb.linearVelocity = new Vector2(horizontal * moveSpeed, _rb.linearVelocity.y);
+            rb.linearVelocity = new Vector2(horizontal * moveSpeed, rb.linearVelocity.y);
         }
         // Jump
         if ((Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.UpArrow)) && !_jumped)
         {
-            _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, 0.2f * _rb.linearVelocity.y);
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0.2f * rb.linearVelocity.y);
             _jumped = true;   
         }
         else if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
             if (_currentJumpVelocity < maxJumpVelocity)
             {
-                _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, maxJumpVelocity);
-                _currentJumpVelocity = _rb.linearVelocity.y;
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, maxJumpVelocity);
+                _currentJumpVelocity = rb.linearVelocity.y;
             }
             
         }
