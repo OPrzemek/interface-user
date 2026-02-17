@@ -2,9 +2,10 @@ using UnityEngine;
 
 public class CatAnimController : MonoBehaviour
 {
+    [SerializeField]
     private bool _jump;
+    [SerializeField]
     private bool _land;
-    private bool _idle;
     private bool _left;
     private bool _right;
     
@@ -16,11 +17,6 @@ public class CatAnimController : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
-        _jump = false;
-        _land = false;
-        _idle = false;
-        _left = false;
-        _right = false;
     }
 
     // Update is called once per frame
@@ -53,7 +49,6 @@ public class CatAnimController : MonoBehaviour
             if (!_jump)
             {
                 _land = false;
-                _idle = false;
                 _jump = true;
                 _anim.SetTrigger("Jump");
             }
@@ -67,14 +62,10 @@ public class CatAnimController : MonoBehaviour
                 _anim.SetTrigger("Land");
             }
         }
-        if (_rb.linearVelocity.y > -0.2f && _land)
+        if (_rb.linearVelocity.y == 0f && _land)
         {
-            if (!_idle)
-            {
-                _land = false;
-                _idle = true;
-                _anim.SetTrigger("Idle");
-            }
+            _land = false;
+            _anim.SetTrigger("Idle");
         }
     }
 }
