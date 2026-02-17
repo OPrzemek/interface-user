@@ -35,7 +35,8 @@ public class MovingCredit : MonoBehaviour
         "THE PLAYER",
         "COFFEE",
         "STACKOVERFLOW",
-        "THANKS FOR PLAYING"
+        "THANKS FOR PLAYING",
+        "Trap test for V"
     };
 
     private void Start()

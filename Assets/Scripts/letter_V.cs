@@ -5,10 +5,10 @@ public class Letter_V : MonoBehaviour
     private Rigidbody2D rb;
     public bool PlayerDown = false;
     public BoxCollider2D mainCollider;
-    public GameObject Player;
+    private GameObject Player;
 
 
-    public float rayLength = 10f;
+    public float rayLength = 30f;
     public LayerMask detectionLayer; 
 
     void Start()
@@ -21,10 +21,14 @@ public class Letter_V : MonoBehaviour
             rb.isKinematic = true;
         }
         PlayerDown = false;
+        Player = GameObject.Find("Player");
     }
 
     void Update()
     {
+        if (Player == null){
+            Player = GameObject.FindGameObjectWithTag("Player");
+        }
         if (rb == null) return;
         if (!PlayerDown)
         {
