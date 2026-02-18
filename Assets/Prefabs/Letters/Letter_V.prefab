@@ -184,7 +184,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerDown: 0
   mainCollider: {fileID: 7110070596995434321}
-  Player: {fileID: 0}
   rayLength: 10
   detectionLayer:
     serializedVersion: 2
@@ -215,7 +214,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 0
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1 &6243629215735539016
 GameObject:
   m_ObjectHideFlags: 0

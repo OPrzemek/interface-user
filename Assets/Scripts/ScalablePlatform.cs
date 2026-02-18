@@ -1,7 +1,15 @@
 using UnityEngine;
 
+enum ScalableType
+{
+    Increase = 1,
+    Decrease = -1
+}
+
 public class ScalablePlatform : MonoBehaviour
 {
+    [SerializeField]
+    private ScalableType scalableType = ScalableType.Increase;
     private Vector3 originalScale;
 
     private void Awake()
@@ -16,6 +24,11 @@ public class ScalablePlatform : MonoBehaviour
 
     public void ApplyScale(float scaleValue)
     {
-        transform.localScale = originalScale * scaleValue;
+        var finalScale = scalableType == ScalableType.Increase
+            ? scaleValue
+            : 1f / scaleValue;
+
+        transform.localScale = originalScale * finalScale;
     }
+
 }

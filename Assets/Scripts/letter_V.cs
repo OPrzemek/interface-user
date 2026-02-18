@@ -47,6 +47,7 @@ public class Letter_V : MonoBehaviour
         {
             rb.gravityScale = 1;
             rb.isKinematic = false;
+            transform.parent = null;
         }
     }
 
