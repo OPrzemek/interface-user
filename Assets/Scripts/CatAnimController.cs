@@ -41,6 +41,11 @@ public class CatAnimController : MonoBehaviour
                 transform.rotation = Quaternion.Euler(0f, 0f, 0f);
             }
         }
+        // Run
+        if (_rb.linearVelocity.x != 0f)
+            _anim.SetBool("Run", true);
+        else
+            _anim.SetBool("Run", false);
         
         
         // Jump animation
