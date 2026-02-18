@@ -56,6 +56,7 @@ public class CatAnimController : MonoBehaviour
                 _land = false;
                 _jump = true;
                 _anim.SetTrigger("Jump");
+                _anim.SetBool("Idle", false);
             }
         }
         if (_rb.linearVelocity.y < -0.2f)
@@ -70,7 +71,7 @@ public class CatAnimController : MonoBehaviour
         if (_rb.linearVelocity.y == 0f && _land)
         {
             _land = false;
-            _anim.SetTrigger("Idle");
+            _anim.SetBool("Idle", true);
         }
     }
 }
