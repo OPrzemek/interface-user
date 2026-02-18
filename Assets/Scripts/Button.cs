@@ -7,10 +7,13 @@ public class Button : MonoBehaviour
     public GameObject Cursor;
     [SerializeField]
     private SceneIndex sceneIndex;
+
+    public bool Locked = false;
     
     private void OnCollisionEnter2D(Collision2D other)
     {
+        if (Locked) return;
         if(other.gameObject==Cursor)
-        SceneManager.LoadScene((int)sceneIndex);
+            SceneManager.LoadScene((int)sceneIndex);
     }
 }

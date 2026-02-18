@@ -6,7 +6,10 @@ enum SceneIndex
 {
     MAIN_MENU = 0,
     SETTINGS_MENU = 1,
-    CREDITS_MENU = 2
+    CREDITS_MENU = 2,
+    AUDIO_MENU = 3,
+    ADVANCED_SETTINGS_MENU = 4,
+    END_MENU = 5
 }
 
 public class GameManager : MonoBehaviour
@@ -15,6 +18,9 @@ public class GameManager : MonoBehaviour
     public float PlatformsScale = 1f;
     public float GravityScale = 6f;
     public float MoveSpeed = 5f;
+    public bool[] EXIT = { false, false, false, false };
+    [SerializeField]
+    private bool _exitUnlocked = false;
     
     
     private void Awake()
@@ -54,5 +60,19 @@ public class GameManager : MonoBehaviour
         parent.transform.localScale = new Vector3(scale, scale, scale);
         parent.AddComponent<ScalablePlatform>();
         parent.name = text;
+    }
+
+    public void LetterCollected(int letterIndex)
+    {
+        EXIT[letterIndex] = true;
+        foreach (bool value in EXIT)
+        {
+            if (value == false)
+            {
+                _exitUnlocked = false;
+                return;
+            }
+        }
+        _exitUnlocked = true;
     }
 }
