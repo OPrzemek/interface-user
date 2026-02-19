@@ -2317,6 +2317,26 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7220161825893208893, guid: d2fb98995ff870748b073f42288a0883, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0686a84ef8ea5274da96931820a39de2, type: 3}
+    - target: {fileID: 7220161825893208893, guid: d2fb98995ff870748b073f42288a0883, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7220161825893208893, guid: d2fb98995ff870748b073f42288a0883, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7220161825893208893, guid: d2fb98995ff870748b073f42288a0883, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7220161825893208893, guid: d2fb98995ff870748b073f42288a0883, type: 3}
+      propertyPath: m_DrawMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7461583090305768041, guid: d2fb98995ff870748b073f42288a0883, type: 3}
       propertyPath: m_SizeDelta.x
       value: 20
@@ -2475,6 +2495,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5928731078436698999, guid: d2fb98995ff870748b073f42288a0883, type: 3}
       propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7220161825893208893, guid: d2fb98995ff870748b073f42288a0883, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0686a84ef8ea5274da96931820a39de2, type: 3}
+    - target: {fileID: 7220161825893208893, guid: d2fb98995ff870748b073f42288a0883, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7220161825893208893, guid: d2fb98995ff870748b073f42288a0883, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7220161825893208893, guid: d2fb98995ff870748b073f42288a0883, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7220161825893208893, guid: d2fb98995ff870748b073f42288a0883, type: 3}
+      propertyPath: m_DrawMode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9026476098998292003, guid: d2fb98995ff870748b073f42288a0883, type: 3}
@@ -7101,6 +7141,26 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7220161825893208893, guid: d2fb98995ff870748b073f42288a0883, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0686a84ef8ea5274da96931820a39de2, type: 3}
+    - target: {fileID: 7220161825893208893, guid: d2fb98995ff870748b073f42288a0883, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7220161825893208893, guid: d2fb98995ff870748b073f42288a0883, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7220161825893208893, guid: d2fb98995ff870748b073f42288a0883, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7220161825893208893, guid: d2fb98995ff870748b073f42288a0883, type: 3}
+      propertyPath: m_DrawMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8210779124444219448, guid: d2fb98995ff870748b073f42288a0883, type: 3}
       propertyPath: scalableType
       value: 1
@@ -9223,6 +9283,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5928731078436698999, guid: 5b0b523f03377e24d9050ea6fe1b7e37, type: 3}
       propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7220161825893208893, guid: 5b0b523f03377e24d9050ea6fe1b7e37, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0686a84ef8ea5274da96931820a39de2, type: 3}
+    - target: {fileID: 7220161825893208893, guid: 5b0b523f03377e24d9050ea6fe1b7e37, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7220161825893208893, guid: 5b0b523f03377e24d9050ea6fe1b7e37, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7220161825893208893, guid: 5b0b523f03377e24d9050ea6fe1b7e37, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7220161825893208893, guid: 5b0b523f03377e24d9050ea6fe1b7e37, type: 3}
+      propertyPath: m_DrawMode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7631474909523336697, guid: 5b0b523f03377e24d9050ea6fe1b7e37, type: 3}
