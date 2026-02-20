@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private LayerMask whatIsGround;
 
+    private float timestamp;
+
     public float moveSpeed;
     private bool _isMoving;
     
@@ -44,31 +46,29 @@ public class PlayerMovement : MonoBehaviour
             rb.linearVelocity = new Vector2(horizontal * moveSpeed, rb.linearVelocity.y);
         }
         // Jump
-        if ((Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.UpArrow)) && !_jumped)
+        if (IsGrounded() && Time.time >= timestamp)
+        {
+            if (_jumped)
+                _jumped = false;
+
+            timestamp = Time.time + 0.3f;
+        }
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && !_jumped)
+        {
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, maxJumpVelocity);
+            _jumped = true;
+        }
+        if ((Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.UpArrow)) && rb.linearVelocity.y > 0f && _jumped)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0.2f * rb.linearVelocity.y);
-            _jumped = true;   
         }
-        else if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
-        {
-            if (_currentJumpVelocity < maxJumpVelocity)
-            {
-                rb.linearVelocity = new Vector2(rb.linearVelocity.x, maxJumpVelocity);
-                _currentJumpVelocity = rb.linearVelocity.y;
-            }
-            
-        }
-        if (IsGrounded())
-        {
-            _currentJumpVelocity = 0f;
-            _jumped = false;
-        }
+        
     }
     
     public bool IsGrounded()
     {
         RaycastHit2D hit = Physics2D.BoxCast(_boxCollider2D.bounds.center, _boxCollider2D.bounds.size,
-            0f, Vector2.down, 0.1f, whatIsGround);
+            0f, Vector2.down, 0.05f, whatIsGround);
         return hit.collider != null;
     }
 }

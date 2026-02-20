@@ -11,12 +11,14 @@ public class CatAnimController : MonoBehaviour
     
     private Rigidbody2D _rb;
     private Animator _anim;
+    private PlayerMovement _player;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
+        _player = GetComponent<PlayerMovement>();
     }
 
     // Update is called once per frame
@@ -49,29 +51,27 @@ public class CatAnimController : MonoBehaviour
         
         
         // Jump animation
-        if (_rb.linearVelocity.y > 0.2f)
+        // Jump / Fall / Land logic
+        if (!_player.IsGrounded())
         {
-            if (!_jump)
+            // Rising
+            if (_rb.linearVelocity.y > 0.2f)
             {
-                _land = false;
-                _jump = true;
-                _anim.SetTrigger("Jump");
-                _anim.SetBool("Idle", false);
+                _anim.SetBool("Jump", true);
+                _anim.SetBool("Fall", false);
+            }
+            // Falling
+            else if (_rb.linearVelocity.y < -0.2f)
+            {
+                _anim.SetBool("Jump", false);
+                _anim.SetBool("Fall", true);
             }
         }
-        if (_rb.linearVelocity.y < -0.2f)
+        else
         {
-            if (!_land)
-            {
-                _jump = false;
-                _land = true;
-                _anim.SetTrigger("Land");
-            }
-        }
-        if (_rb.linearVelocity.y == 0f && _land)
-        {
-            _land = false;
-            _anim.SetBool("Idle", true);
+            // Landed
+            _anim.SetBool("Jump", false);
+            _anim.SetBool("Fall", false);
         }
     }
 }
