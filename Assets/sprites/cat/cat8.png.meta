@@ -116,9 +116,9 @@ TextureImporter:
       name: cat8_0
       rect:
         serializedVersion: 2
-        x: 5
+        x: 7
         y: 0
-        width: 42
+        width: 40
         height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
