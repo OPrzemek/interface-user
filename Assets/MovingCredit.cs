@@ -48,11 +48,11 @@ public class MovingCredit : MonoBehaviour
         // Spawn credits
         float y = 3f;
 
-        foreach (string line in creditsLines)
-        {
-            InstantiateText(line, new Vector2(-4.5f, y), 0.4f);
-            y -= 0.8f;
-        }
+        // foreach (string line in creditsLines)
+        // {
+        //     InstantiateText(line, new Vector2(-5f, y), 0.6f);
+        //     y -= 0.8f;
+        // }
     }
 
     private void Update()

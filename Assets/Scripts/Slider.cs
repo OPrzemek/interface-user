@@ -6,7 +6,9 @@ enum SliderType
 {
     Scale,
     Gravity,
-    MoveSpeed
+    MoveSpeed,
+    Brightness,
+    Vivid,
 }
 
 public class Slider : MonoBehaviour
@@ -29,6 +31,12 @@ public class Slider : MonoBehaviour
                 break;
             case SliderType.MoveSpeed:
                 slider.value = GameManager.Instance.MoveSpeed;
+                break;
+            case SliderType.Brightness:
+                slider.value = GameManager.Instance.BrightnessIntensity;
+                break;
+            case SliderType.Vivid:
+                slider.value = GameManager.Instance.VividColorValue;
                 break;
         }
     }
@@ -59,5 +67,23 @@ public class Slider : MonoBehaviour
 
         PlayerMovement playerMovement = FindObjectOfType<PlayerMovement>();
         playerMovement.moveSpeed = value;
+    }
+    
+    public void OnBrightnessSliderChanged(float value)
+    {
+        GameManager.Instance.BrightnessIntensity = value;
+
+        LightController light = FindObjectOfType<LightController>();
+
+        light.ApplyLightIntensity(value);
+    }
+    
+    public void OnVividColorSliderChanged(float value)
+    {
+        GameManager.Instance.VividColorValue = value;
+
+        LightController light = FindObjectOfType<LightController>();
+
+        light.ApplyColor(value);
     }
 }

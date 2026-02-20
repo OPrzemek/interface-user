@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
     public float PlatformsScale = 1f;
     public float GravityScale = 6f;
     public float MoveSpeed = 5f;
+    public float BrightnessIntensity = 1f;
+    public float VividColorValue = 1f;
     public bool[] EXIT = { false, false, false, false };
     [SerializeField]
     private bool _exitUnlocked = false;
