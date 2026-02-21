@@ -23,7 +23,6 @@ public class MovingCredit : MonoBehaviour
         " ",
         "ART",
         "EMDEMEISTER",
-        "J YUKESH",
         " ",
         "MUSIC",
         "SWAUDIO",
@@ -36,7 +35,7 @@ public class MovingCredit : MonoBehaviour
         "COFFEE",
         "STACKOVERFLOW",
         "THANKS FOR PLAYING",
-        "Trap test for V"
+        
     };
 
     private void Start()
