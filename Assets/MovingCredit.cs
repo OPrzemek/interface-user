@@ -23,7 +23,6 @@ public class MovingCredit : MonoBehaviour
         " ",
         "ART",
         "EMDEMEISTER",
-        "J YUKESH",
         " ",
         "MUSIC",
         "SWAUDIO",
