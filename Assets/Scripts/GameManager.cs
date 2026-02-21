@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     public float BrightnessIntensity = 1f;
     public float VividColorValue = 1f;
     public bool[] EXIT = { false, false, false, false };
+    public bool ShouldEnableHowToPlay = true;
     [SerializeField]
     private bool _exitUnlocked = false;
     

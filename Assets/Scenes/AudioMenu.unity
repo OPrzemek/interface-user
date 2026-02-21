@@ -4433,15 +4433,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1016182770550562449, guid: 2b73a28b182e25e4596582b4bce2d52f, type: 3}
       propertyPath: m_Value
-      value: 5
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 1016182770550562449, guid: 2b73a28b182e25e4596582b4bce2d52f, type: 3}
       propertyPath: m_MaxValue
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1016182770550562449, guid: 2b73a28b182e25e4596582b4bce2d52f, type: 3}
       propertyPath: m_MinValue
-      value: 2.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1016182770550562449, guid: 2b73a28b182e25e4596582b4bce2d52f, type: 3}
       propertyPath: m_Navigation.m_Mode
@@ -8954,7 +8954,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1016182770550562449, guid: 2b73a28b182e25e4596582b4bce2d52f, type: 3}
       propertyPath: m_MaxValue
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1016182770550562449, guid: 2b73a28b182e25e4596582b4bce2d52f, type: 3}
       propertyPath: m_MinValue
