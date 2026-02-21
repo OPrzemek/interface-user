@@ -21,7 +21,7 @@ public class ExitButton : MonoBehaviour
                 exitText[i].color = Color.green;
             else
             {
-                exitText[i].color = Color.white;
+                exitText[i].color = Color.black;
                 locked = true;
             }
         }
@@ -33,6 +33,7 @@ public class ExitButton : MonoBehaviour
 
         if (other.gameObject == cursor)
         {
+            GameManager.Instance.PlayCursorClick();
             StartCoroutine(EndSequence());
         }
     }

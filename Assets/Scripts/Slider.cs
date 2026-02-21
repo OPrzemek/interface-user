@@ -9,6 +9,7 @@ enum SliderType
     MoveSpeed,
     Brightness,
     Vivid,
+    OverallVolume
 }
 
 public class Slider : MonoBehaviour
@@ -37,6 +38,9 @@ public class Slider : MonoBehaviour
                 break;
             case SliderType.Vivid:
                 slider.value = GameManager.Instance.VividColorValue;
+                break;
+            case SliderType.OverallVolume:
+                slider.value = GameManager.Instance.OverallVolume;
                 break;
         }
     }
@@ -85,5 +89,11 @@ public class Slider : MonoBehaviour
         LightController light = FindObjectOfType<LightController>();
 
         light.ApplyColor(value);
+    }
+    
+    public void OnOverallVolumeSliderChanged(float value)
+    {
+        GameManager.Instance.OverallVolume = value;
+        GameManager.Instance.UpdateVolume();
     }
 }

@@ -12,46 +12,11 @@ public class MovingCredit : MonoBehaviour
 
     private Vector3 startPos;
 
-    string[] creditsLines = new string[]
-    {
-        "LEAD DEVELOPER",
-        "EMDEMEISTER",
-        "",
-        "PROGRAMMING",
-        "EMDEMEISTER",
-        "J YUKESH",
-        " ",
-        "ART",
-        "EMDEMEISTER",
-        " ",
-        "MUSIC",
-        "SWAUDIO",
-        " ",
-        "GAME DESIGN",
-        "EMDEMEISTER",
-        " ",
-        "SPECIAL THANKS",
-        "THE PLAYER",
-        "COFFEE",
-        "STACKOVERFLOW",
-        "THANKS FOR PLAYING",
-        
-    };
-
     private void Start()
     {
         // Set start position below screen
         startPos = new Vector3(transform.position.x, startY, transform.position.z);
         transform.position = startPos;
-
-        // Spawn credits
-        float y = 3f;
-
-        // foreach (string line in creditsLines)
-        // {
-        //     InstantiateText(line, new Vector2(-5f, y), 0.6f);
-        //     y -= 0.8f;
-        // }
     }
 
     private void Update()

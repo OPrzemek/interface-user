@@ -12,7 +12,10 @@ public class Button : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other) 
     { 
         if (Locked) return;
-        if (other.gameObject == Cursor) 
-            SceneManager.LoadScene((int)sceneIndex); 
+        if (other.gameObject == Cursor)
+        {
+            SceneManager.LoadScene((int)sceneIndex);
+            GameManager.Instance.PlayCursorClick();
+        } 
     } 
 }

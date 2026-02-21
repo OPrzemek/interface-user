@@ -22,8 +22,15 @@ public class GameManager : MonoBehaviour
     public float VividColorValue = 1f;
     public bool[] EXIT = { false, false, false, false };
     public bool ShouldEnableHowToPlay = true;
+    public float OverallVolume = 0.7f;
+    [SerializeField] private AudioSource musicSource;
+    [SerializeField] private AudioSource soundSource;
     [SerializeField]
     private bool _exitUnlocked = false;
+
+    [SerializeField] private AudioClip[] catMeowSounds;
+    [SerializeField] private AudioClip cursorClickSound;
+    [SerializeField] private AudioClip catJumpSound;
     
     
     private void Awake()
@@ -35,6 +42,8 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
         DontDestroyOnLoad(gameObject);
+        
+        UpdateVolume();
     }
     
     [SerializeField]
@@ -77,5 +86,26 @@ public class GameManager : MonoBehaviour
             }
         }
         _exitUnlocked = true;
+    }
+
+    public void UpdateVolume()
+    {
+        musicSource.volume = OverallVolume;
+        //soundSource.volume = Mathf.Clamp(OverallVolume - 0.2f, 0f, 1f);
+    }
+
+    public void PlayCatMeow()
+    {
+        soundSource.PlayOneShot(catMeowSounds[Random.Range(0, catMeowSounds.Length)]);
+    }
+    
+    public void PlayCatJump()
+    {
+        soundSource.PlayOneShot(catJumpSound);
+    }
+    
+    public void PlayCursorClick()
+    {
+        soundSource.PlayOneShot(cursorClickSound);
     }
 }

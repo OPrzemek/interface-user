@@ -8,6 +8,7 @@ public class CursorCheck : MonoBehaviour
     {
         if (collision.gameObject == cursor)
         {
+            GameManager.Instance.PlayCursorClick();
             Debug.Log("cursorWorks");
         }
     }

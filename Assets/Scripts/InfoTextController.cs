@@ -23,6 +23,7 @@ public class InfoTextController : MonoBehaviour
     {
         if (other.gameObject == cursor)
         {
+            GameManager.Instance.PlayCursorClick();
             if (infoTextType == InfoTextType.PlayText && !playText.activeSelf)
             {
                 playText.SetActive(true);

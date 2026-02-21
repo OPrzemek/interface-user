@@ -16,6 +16,9 @@ public class difficultySwap : MonoBehaviour
     {
         if (Locked) return;
         if (other.gameObject == Cursor)
+        {
+            GameManager.Instance.PlayCursorClick();
             difficultySetting.SetDifficulty(diff);
+        }
     }
 }

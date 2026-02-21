@@ -303,14 +303,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4716981, g: 0.24371597, b: 0.13572444, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 0a680ecd9a9f4c74aae81825636f7b8f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2188,8 +2188,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4282955222
-  m_fontColor: {r: 0.8396226, g: 0.7098532, b: 0.2811944, a: 1}
+    rgba: 4284662235
+  m_fontColor: {r: 0.8584906, g: 0.75853395, b: 0.38470095, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2808,7 +2808,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8867924, g: 0.8867924, b: 0.8867924, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3357,7 +3357,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -5949,9 +5949,17 @@ MonoBehaviour:
   MoveSpeed: 5
   BrightnessIntensity: 1
   VividColorValue: 1
-  EXIT: 01010101
+  EXIT: 00000000
   ShouldEnableHowToPlay: 1
+  OverallVolume: 0.4
+  musicSource: {fileID: 1106638796}
+  soundSource: {fileID: 604054092}
   _exitUnlocked: 0
+  catMeowSounds:
+  - {fileID: 8300000, guid: daad751d8ad5758409b120837017acfb, type: 3}
+  - {fileID: 8300000, guid: 3c743dad80f7f1949a5c55c925ee0dba, type: 3}
+  cursorClickSound: {fileID: 8300000, guid: 572cecef28a41644aaa65fc472b621c5, type: 3}
+  catJumpSound: {fileID: 8300000, guid: 6e15a354c8f62aa4896a664da2f8a191, type: 3}
   letterConfig: {fileID: 11400000, guid: 53b9130791ff51f41b75d08b1d2494df, type: 2}
 --- !u!4 &1041789299
 Transform:
@@ -6298,7 +6306,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 561c0675dc54e554fa2e961a1a6dc5a5, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.1
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -7598,17 +7606,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 51651877}
     m_Modifications:
+    - target: {fileID: 1126038589188163071, guid: d45db6f1858aef8468384f2f00bbc3f2, type: 3}
+      propertyPath: scalableType
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1226868332735321019, guid: d45db6f1858aef8468384f2f00bbc3f2, type: 3}
+      propertyPath: m_Size.x
+      value: 0.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 1226868332735321019, guid: d45db6f1858aef8468384f2f00bbc3f2, type: 3}
+      propertyPath: m_Size.y
+      value: 0.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 1226868332735321019, guid: d45db6f1858aef8468384f2f00bbc3f2, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.33333334
+      objectReference: {fileID: 0}
     - target: {fileID: 1408639206377070336, guid: d45db6f1858aef8468384f2f00bbc3f2, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 1408639206377070336, guid: d45db6f1858aef8468384f2f00bbc3f2, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.5085715
+      value: 4.6
       objectReference: {fileID: 0}
     - target: {fileID: 1408639206377070336, guid: d45db6f1858aef8468384f2f00bbc3f2, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.2571428
+      value: 1.23
       objectReference: {fileID: 0}
     - target: {fileID: 1408639206377070336, guid: d45db6f1858aef8468384f2f00bbc3f2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7652,7 +7676,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1408639206377070336, guid: d45db6f1858aef8468384f2f00bbc3f2, type: 3}
       propertyPath: m_ConstrainProportionsScale
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4353866928682720053, guid: d45db6f1858aef8468384f2f00bbc3f2, type: 3}
       propertyPath: m_Name
@@ -7663,16 +7687,20 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4912325259559981967, guid: d45db6f1858aef8468384f2f00bbc3f2, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b68e200889600ef4c922bba63bf729e0, type: 3}
+    - target: {fileID: 4912325259559981967, guid: d45db6f1858aef8468384f2f00bbc3f2, type: 3}
       propertyPath: m_Color.b
-      value: 0.12406549
+      value: 0.8490566
       objectReference: {fileID: 0}
     - target: {fileID: 4912325259559981967, guid: d45db6f1858aef8468384f2f00bbc3f2, type: 3}
       propertyPath: m_Color.g
-      value: 0.41302767
+      value: 0.8490566
       objectReference: {fileID: 0}
     - target: {fileID: 4912325259559981967, guid: d45db6f1858aef8468384f2f00bbc3f2, type: 3}
       propertyPath: m_Color.r
-      value: 0.6415094
+      value: 0.8490566
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7884,8 +7912,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190294
-  m_fontColor: {r: 0.8396226, g: 0, b: 0, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -7908,7 +7936,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 70
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535

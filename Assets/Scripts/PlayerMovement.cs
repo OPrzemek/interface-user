@@ -55,6 +55,7 @@ public class PlayerMovement : MonoBehaviour
         }
         if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && !_jumped)
         {
+            GameManager.Instance.PlayCatJump();
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, maxJumpVelocity);
             _jumped = true;
         }
@@ -70,5 +71,10 @@ public class PlayerMovement : MonoBehaviour
         RaycastHit2D hit = Physics2D.BoxCast(_boxCollider2D.bounds.center, _boxCollider2D.bounds.size,
             0f, Vector2.down, 0.05f, whatIsGround);
         return hit.collider != null;
+    }
+
+    public void OnCatClick()
+    {
+        GameManager.Instance.PlayCatMeow();
     }
 }
